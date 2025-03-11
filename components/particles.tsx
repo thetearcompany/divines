@@ -1,74 +1,46 @@
-"use client"
+import { useRef } from "react";
+import { Points, PointMaterial } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import * as THREE from "three";
 
-import { useRef, useMemo } from "react"
-import { useFrame } from "@react-three/fiber"
-import * as THREE from "three"
+export default function Particles() {
+  const ref = useRef<THREE.Points>(null!);
+  const sphere = new Float32Array(3000);
 
-export function Particles({ count }) {
-  const mesh = useRef()
-  const light = useRef()
+  for (let i = 0; i < sphere.length; i += 3) {
+    const theta = Math.random() * 2 * Math.PI;
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = Math.pow(Math.random(), 0.5) * 4.5;
+    sphere[i] = r * Math.sin(phi) * Math.cos(theta);
+    sphere[i + 1] = r * Math.sin(phi) * Math.sin(theta);
+    sphere[i + 2] = r * Math.cos(phi);
+  }
 
-  const particles = useMemo(() => {
-    const temp = new THREE.Vector3()
-    const positions = new Float32Array(count * 3)
-    const colors = new Float32Array(count * 3)
-    const sizes = new Float32Array(count)
-
-    for (let i = 0; i < count; i++) {
-      const i3 = i * 3
-      temp.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1)
-      temp.normalize().multiplyScalar(Math.random() * 10)
-      positions[i3] = temp.x
-      positions[i3 + 1] = temp.y
-      positions[i3 + 2] = temp.z
-
-      const color = new THREE.Color()
-      color.setHSL(Math.random(), 0.7, 0.5)
-      colors[i3] = color.r
-      colors[i3 + 1] = color.g
-      colors[i3 + 2] = color.b
-
-      sizes[i] = Math.random() * 0.1
+  useFrame((state, delta) => {
+    if (ref.current) {
+      ref.current.rotation.y += delta * 0.02;
+      ref.current.rotation.x += Math.sin(state.clock.getElapsedTime()) * 0.01; // Subtelny obrót
     }
-
-    return { positions, colors, sizes }
-  }, [count])
-
-  useFrame((state) => {
-    const time = state.clock.getElapsedTime()
-    mesh.current.rotation.x = Math.sin(time / 10)
-    mesh.current.rotation.y = Math.cos(time / 10)
-    light.current.position.x = Math.sin(time) * 3
-    light.current.position.y = Math.cos(time) * 3
-  })
+  });
 
   return (
     <group>
-      <points ref={mesh}>
-        <bufferGeometry>
-          <bufferAttribute
-            attachObject={["attributes", "position"]}
-            count={particles.positions.length / 3}
-            array={particles.positions}
-            itemSize={3}
-          />
-          <bufferAttribute
-            attachObject={["attributes", "color"]}
-            count={particles.colors.length / 3}
-            array={particles.colors}
-            itemSize={3}
-          />
-          <bufferAttribute
-            attachObject={["attributes", "size"]}
-            count={particles.sizes.length}
-            array={particles.sizes}
-            itemSize={1}
-          />
-        </bufferGeometry>
-        <pointsMaterial size={0.1} vertexColors sizeAttenuation />
-      </points>
-      <pointLight ref={light} distance={40} intensity={8} color="white" />
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled>
+        <PointMaterial
+          transparent
+          color={[1, 0.8, 0.2]} // Złoty blask
+          size={0.02}
+          depthWrite={false}
+        />
+      </Points>
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled>
+        <PointMaterial
+          transparent
+          color={[0.5, 0.1, 0.7]} // Indigo
+          size={0.02}
+          depthWrite={false}
+        />
+      </Points>
     </group>
-  )
+  );
 }
-

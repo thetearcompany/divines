@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: 231 100% 99%;
+  --background: 0 0% 100%;
   --foreground: 231 15% 15%;
 
   --muted: 231 15% 95%;
@@ -15,22 +15,22 @@
   --card: 231 100% 99%;
   --card-foreground: 231 15% 15%;
 
-  --border: 231 15% 90%;
-  --input: 231 15% 90%;
+  --border: 231 15% 80%;
+  --input: 231 15% 80%;
 
-  --primary: 231 100% 50%;
+  --primary: 231 100% 55%;
   --primary-foreground: 231 100% 99%;
 
-  --secondary: 231 15% 95%;
+  --secondary: 231 15% 90%;
   --secondary-foreground: 231 15% 15%;
 
-  --accent: 43 100% 50%;
+  --accent: 0 100% 40%; /* Głębsza czerwień */
   --accent-foreground: 231 15% 15%;
 
-  --destructive: 0 84% 60%;
+  --destructive: 0 84% 50%; /* Intensywniejsza destrukcja */
   --destructive-foreground: 231 100% 99%;
 
-  --ring: 231 100% 50%;
+  --ring: 231 100% 55%;
 
   --radius: 0.5rem;
 }
@@ -48,123 +48,35 @@
   --card: 231 50% 10%;
   --card-foreground: 231 15% 95%;
 
-  --border: 231 15% 30%;
-  --input: 231 15% 30%;
+  --border: 231 15% 25%;
+  --input: 231 15% 25%;
 
-  --primary: 231 100% 60%;
+  --primary: 231 100% 65%;
   --primary-foreground: 231 15% 95%;
 
-  --secondary: 231 15% 30%;
+  --secondary: 231 15% 25%;
   --secondary-foreground: 231 15% 95%;
 
-  --accent: 43 100% 60%;
+  --accent: 0 100% 50%;
   --accent-foreground: 231 50% 10%;
 
-  --destructive: 0 84% 60%;
+  --destructive: 0 84% 45%;
   --destructive-foreground: 231 15% 95%;
 
-  --ring: 231 100% 60%;
+  --ring: 231 100% 65%;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@layer components {
-  .mystical-gradient {
-    @apply bg-gradient-to-br from-indigo-100 via-indigo-50 to-blue-50;
-  }
-
-  .divine-glow {
-    @apply shadow-lg shadow-amber-200/50;
-  }
-
-  .angelic-text {
-    @apply font-serif text-indigo-900;
-  }
-
-  .celestial-button {
-    @apply bg-gradient-to-r from-indigo-500 to-blue-500 text-white hover:from-indigo-600 hover:to-blue-600 transition-all duration-300 ease-in-out;
-  }
-
-  .ethereal-input {
-    @apply bg-white/80 border border-indigo-200 focus:border-indigo-400 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
-  }
-
-  .divine-card {
-    @apply bg-white/90 border border-indigo-100 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out;
-  }
-
-  .celestial-icon {
-    @apply text-amber-400 drop-shadow-md;
-  }
-}
-
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: theme("colors.indigo.50");
-}
-
-::-webkit-scrollbar-thumb {
-  background: theme("colors.indigo.300");
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: theme("colors.indigo.400");
-}
-
-/* Mist effect */
-.mist-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.mist-bg::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
-  animation: mistAnimation 20s infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes mistAnimation {
-  0% {
-    transform: translate(10%, 10%);
-  }
-  100% {
-    transform: translate(-10%, -10%);
-  }
-}
-
-/* Divine light effect */
-.divine-light {
-  position: relative;
-}
-
+/* Divine Light Effect */
 .divine-light::after {
   content: "";
   position: absolute;
-  top: -10px;
-  left: -10px;
-  right: -10px;
-  bottom: -10px;
-  background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, rgba(255, 215, 0, 0) 70%);
-  filter: blur(8px);
-  opacity: 0;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, rgba(255, 215, 0, 0) 75%);
+  filter: blur(12px);
+  opacity: 1;
   animation: divineLight 3s infinite alternate;
   pointer-events: none;
 }
@@ -176,7 +88,24 @@
   }
   100% {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 
+.layout-background {
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(at 50% 50%, rgba(255, 170, 0, 0.6) 0%, transparent 50%),
+              radial-gradient(at 30% 20%, rgba(255, 100, 0, 0.5) 0%, transparent 40%),
+              radial-gradient(at 70% 80%, rgba(255, 200, 100, 0.4) 0%, transparent 45%),
+              radial-gradient(at 20% 60%, rgba(255, 140, 0, 0.35) 0%, transparent 30%),
+              radial-gradient(at 80% 30%, rgba(255, 180, 60, 0.3) 0%, transparent 40%),
+              radial-gradient(at 50% 90%, rgba(255, 220, 150, 0.2) 0%, transparent 50%);
+  max-height: 800px;
+  height: 80vh;
+  max-width: 1400px;
+  width: 100%;
+  filter: blur(35px);
+  z-index: -1;
+  animation: divineLight 3s infinite alternate;
+}

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import AngelCarousel from "@/components/angel-carousel"
+import { AngelCarousel } from "@/components/angel-carousel"
 import ChatInterface from "@/components/chat-interface"
 import ConversationHistory from "@/components/conversation-history"
 import { angels } from "@/lib/data"
@@ -82,69 +82,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-indigo-100">
-      {!selectedAngel ? (
-        <div className="container mx-auto px-4 py-8">
-          <Tabs defaultValue="angels">
-            <TabsList className="mb-4">
-              <TabsTrigger value="angels">Angelic Realm</TabsTrigger>
-              <TabsTrigger value="profile">Spiritual Profile</TabsTrigger>
-              <TabsTrigger value="events">Celestial Events</TabsTrigger>
-            </TabsList>
-            <TabsContent value="angels">
-              <AngelCarousel angels={angels} onSelectAngel={handleAngelSelect} />
-              <ConversationHistory
-                onSelectConversation={handleSelectConversation}
-                onDeleteConversation={handleDeleteConversation}
-              />
-            </TabsContent>
-            <TabsContent value="profile">
-              {userProfile && (
-                <Card>
-                  <CardHeader>
-                    <CardTitle>{userProfile.name}</CardTitle>
-                    <CardDescription>{userProfile.spiritualPath}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p>Energy Level: {userProfile.energyLevel}</p>
-                    <p>Karma Points: {userProfile.karmaPoints}</p>
-                    <h3 className="font-semibold mt-4">Divine Achievements</h3>
-                    <ul>
-                      {userProfile.achievements.map((achievement) => (
-                        <li key={achievement.id}>
-                          {achievement.name} - {achievement.description}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              )}
-            </TabsContent>
-            <TabsContent value="events">
-              {celestialEvents.map((event) => (
-                <Card key={event.id} className="mb-4">
-                  <CardHeader>
-                    <CardTitle>{event.name}</CardTitle>
-                    <CardDescription>{new Date(event.date).toLocaleDateString()}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p>{event.description}</p>
-                    <p>Associated Angels: {event.associatedAngels.join(", ")}</p>
-                    <p>Energy Impact: +{event.energyImpact}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </TabsContent>
-          </Tabs>
-        </div>
-      ) : (
-        <ChatInterface
-          initialAngel={selectedAngel}
-          onBack={handleBackToHome}
-          chatHistory={chatHistory}
-          setChatHistory={setChatHistory}
-        />
-      )}
-    </div>
-  )
+      <AngelCarousel angels={angels} onSelectAngel={handleAngelSelect} />
+      <div className="divine-light size-full fixed" />
+    </div>)
 }
 

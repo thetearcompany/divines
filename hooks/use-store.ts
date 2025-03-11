@@ -1,12 +1,18 @@
 import { Angel } from '@/lib/types';
 import { create } from 'zustand';
 
-interface Store {
-    message: string;
-    setMessage: (message: string) => void;
+export interface Message {
+    text: string
+    isUser: boolean
+    event?: PageRevealEvent[]
+}
 
-    messages: string[];
-    updateMessages: (message: string) => void;
+interface Store {
+    message?: Message;
+    setMessage: (message: Message) => void;
+
+    messages: Message[];
+    updateMessages: (message: Message) => void;
     currentAngel: Angel | null;
     setCurrentAngel: (angel: Angel) => void;
 
@@ -14,12 +20,10 @@ interface Store {
 }
 
 export const useStore = create<Store>((set) => ({
-    message: "",
     setMessage: (message) => set({ message }),
 
     messages: [],
-    updateMessages(message: string) {
-        this.messages = this.messages.concat(message)
+    updateMessages(message: Message) {
         set(store => ({...store, messages: store.messages.concat(message)}))
     },
     currentAngel: null,

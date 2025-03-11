@@ -5,7 +5,8 @@ import mantras from "@/mantras";
 import { useStore } from "@/hooks/use-store";
 import { Input } from "./ui/input";
 import { useCallback, useEffect } from "react";
-import {useForm} from 'react-hook-form';
+import {FieldValues, useForm} from 'react-hook-form';
+import Conversation from "./conversation";
 
 interface AngelCard {
     angel: Partial<Angel>
@@ -14,10 +15,11 @@ interface AngelCard {
 export default function AngelCard({ angel }: AngelCard) {
 
     const {message, messages, setMessage, updateMessages} = useStore();
-    const { register, handleSubmit, formState: { errors , isSubmitSuccessful} } = useForm();
+    const { register, handleSubmit, formState: { errors , isSubmitSuccessful} } = useForm({ });
 
-    const onSubmit = (query: string) => {
-        setMessage(query);
+    const onSubmit = ({ message }: { message: string }) => {
+        setMessage(message);
+        setMessage('');
     }
 
     useEffect(() => {
@@ -26,12 +28,11 @@ export default function AngelCard({ angel }: AngelCard) {
         }
     }, [isSubmitSuccessful]);
 
-    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setMessage(e.target.value), [message]);
     return <div
-        className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative"
+        className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative select-none"
     >
         {/* Header with Image */}
-        <div className="relative p-6 text-center">
+        {<div className="relative p-6 text-center">
             <div className="relative p-6 text-center">
                 <div className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-300 shadow-md overflow-hidden">
                     <Image
@@ -48,7 +49,7 @@ export default function AngelCard({ angel }: AngelCard) {
                 </p>
             </div>
             <p className="text-sm opacity-80 mt-2 px-4">{angel.description}</p>
-        </div>
+        </div>}
 
 
         <div className="px-6 py-4 bg-indigo-400/30 border-t border-indigo-500/30">
@@ -87,16 +88,16 @@ export default function AngelCard({ angel }: AngelCard) {
             </div>
         </div>
 
+        <Conversation />
         {/* Sekcja wpisywania wiadomości */}
-        <form className="flex items-center p-6 border-t border-indigo-500/30" {...register} onSubmit={handleSubmit(onSubmit)}>
+        <form className="flex items-center p-6 border-t border-indigo-500/30" onSubmit={handleSubmit(onSubmit)}>
             <Input
-                value={message}
-                onChange={handleInputChange}
+                {...register('message')}
                 type="text"
                 placeholder=""
                 className="flex-1 p-2 bg-indigo-400/30 text-amber-100 border border-indigo-500/30 rounded-lg focus:ring focus:ring-indigo-400"
             />
-            <Button size="sm" className="ml-3 bg-indigo-600 hover:bg-indigo-700">
+            <Button size="sm" className="ml-3 bg-indigo-600 hover:bg-indigo-700" type="submit">
                 Send
             </Button>
         </form>

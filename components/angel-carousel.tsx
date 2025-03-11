@@ -31,12 +31,10 @@ export function AngelCarousel(props: AngelCarouselProps) {
       setApi={() => emblaApi}
       ref={emblaRef}
       >
-        <div className="absolute inset-y-0 left-0 md:w-[27px] bg-gradient-to-r from-background to-transparent z-20 pointer-events-none opacity/40" />
-        <div className="xs:hidden opacity-70 absolute inset-y-0 left-0 w-48 backdrop-blur-sm bg-gradient-to-r from-indigo-900/40 to-transparent z-10 pointer-events-none opacity/40" />
+        <div className="absolute inset-y-0 left-0 xs:w md:w-[27px] bg-gradient-to-r from-background to-transparent z-20 pointer-events-none opacity/40" />
+        <div className="opacity-70 absolute inset-y-0 left-0 w-48 backdrop-blur-sm bg-gradient-to-r from-indigo-900/40 to-transparent z-10 pointer-events-none opacity/40" />
         <div className="absolute inset-y-0 right-0 md:w-[27px] bg-gradient-to-l from-background to-transparent z-20 pointer-events-none opacity/40" />
-        <div className="xs:hidden opacity-70 absolute inset-y-0 right-0 w-48 backdrop-blur-sm bg-gradient-to-l from-indigo-900/40 to-transparent z-10 pointer-events-none opacity/40" />
-
-        <div className="layout-background-bottom absolute opacity-30 z-[-1]" />
+        <div className="opacity-70 absolute inset-y-0 right-0 w-48 backdrop-blur-sm bg-gradient-to-l from-indigo-900/40 to-transparent z-10 pointer-events-none opacity/40" />
 
         <CarouselContent>
           {divines.map((guide, index) => {

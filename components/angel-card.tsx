@@ -8,12 +8,12 @@ interface AngelCard {
 }
 
 export default function AngelCard({ angel }: AngelCard) {
+    
     return <div
         className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative"
     >
         {/* Header with Image */}
         <div className="relative p-6 text-center">
-            <h3 className="text-2xl font-serif font-bold mt-4 text-indigo-400">{angel.name}</h3>
             <div className="relative p-6 text-center">
                 <div className="w-24 h-24 overflow-hidden rounded-full mx-auto border-4 border-indigo-300 shadow-md">
                     <Image
@@ -24,11 +24,10 @@ export default function AngelCard({ angel }: AngelCard) {
                         className="object-cover w-full h-full"
                     />
                 </div>
+            <h3 className="text-2xl font-serif font-bold mt-4 text-indigo-400">{angel.name}</h3>
                 <p className="mt-4 text-lg font-semibold text-amber-300 italic">
                     "{mantras[angel.name as keyof typeof mantras]}"
                 </p>
-                <p className="text-sm opacity-80 mt-2 px-4">{angel.description}</p>
-
             </div>
             <p className="text-sm opacity-80 mt-2 px-4">{angel.description}</p>
         </div>

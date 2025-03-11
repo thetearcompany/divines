@@ -19,7 +19,7 @@ export default function Conversation({ messages }: ConversationProps) {
     return (
         <div className="px-6 py-4 max-h-60 overflow-y-scroll bg-indigo-950/20 border border-indigo-500/30">
             {messages.map((msg, index) => (
-                <MessageBubble key={index} text={msg.text} isUser={msg.isUser} />
+                <MessageBubble key={index} text={msg.text} isUser={msg.isUser} angelName={msg.angelName} />
             ))}
             <div ref={messagesEndRef} />
         </div>

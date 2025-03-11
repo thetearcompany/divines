@@ -1,12 +1,15 @@
-import { Angel } from "@/lib/types";
+import { useEffect, useState } from "react";
+import {FieldValues, useForm} from 'react-hook-form';
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { useAssistant, useChat } from '@ai-sdk/react';
+
+import { Angel } from "@/lib/types";
 import mantras from "@/mantras";
 import { useStore } from "@/hooks/use-store";
 import { Input } from "./ui/input";
-import { useCallback, useEffect, useState } from "react";
-import {FieldValues, useForm} from 'react-hook-form';
+import { Button } from "./ui/button";
 import Conversation from "./conversation";
+
 import divines from "@/divines";
 
 interface AngelCard {
@@ -15,9 +18,20 @@ interface AngelCard {
     }
 }
 
+const assistantMap: Record<string, string> = divines.reduce((acc, angel) => {
+    acc[angel.name] = angel.openai_id;
+    return acc;
+}, {} as Record<string, string>);
+
 export default function AngelCard({ angel }: AngelCard) {
 
-    const { register, handleSubmit, formState: { errors , isSubmitSuccessful}, reset } = useForm({ });
+    const { register, handleSubmit, reset } = useForm({ });
+    const selectedAssistant = assistantMap[angel.name as string] || "default-assistant";
+
+
+    const assistant = useAssistant({
+        api: `/api/assistant/${selectedAssistant}`
+    });
 
     const {messagesByAngel, updateMessages} = useStore();
     const messages = messagesByAngel[angel.name] ?? [];
@@ -30,21 +44,25 @@ export default function AngelCard({ angel }: AngelCard) {
         }
     }, [messages]);
 
+    useEffect(() => {
+        const lastMessage = assistant.messages[assistant.messages - 1] || 0;
+        updateMessages(selectedAssistant, lastMessage)
+    }, [assistant.messages]);
+
     const firstMessage = !hasStarted
         ? divines.find(celestian => celestian.name === angel.name)?.first_message ?? null
         : null;
 
-    const onSubmit = (data: FieldValues) => {
-        const text = data.message;
-        if (text.trim() === "") return;
+        const onSubmit = async (data: FieldValues) => {
+            const text = data.message;
+            if (text.trim() === "") return;
+        
+            await updateMessages(angel.name!, { text, isUser: true, angelName: angel.name! });
+            await assistant.submitMessage(text);
+            setHasStarted(true);
+            reset();
+        };
 
-        updateMessages(angel.name!, { text, isUser: true });
-        setMessage({ text, isUser: true });
-
-        setHasStarted(true);
-
-        reset();
-    };
 
     return <div
         className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative select-none"

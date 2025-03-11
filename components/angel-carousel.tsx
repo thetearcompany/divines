@@ -4,22 +4,13 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel"
-import { Angel } from "@/lib/types"
-
-interface AngelCarouselProps {
-  angels: Angel[]
-  onSelectAngel: (angel: Angel) => void;
-  current: Angel | null;
-  message: Message;
-}
 
 import divines from '@/divines'
 import useEmblaCarousel from 'embla-carousel-react'
 import { useRef } from "react"
 import AngelCard from "./angel-card";
-import { Message } from "@/hooks/use-store";
 
-export function AngelCarousel(props: AngelCarouselProps) {
+export function AngelCarousel() {
 
   const [emblaApi, setApi] = useEmblaCarousel();
   const emblaRef = useRef<HTMLDivElement | null>(null);

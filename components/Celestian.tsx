@@ -7,14 +7,18 @@ interface CelestianProps {
 }
 
 export default function Celestian({ id }: CelestianProps) {
-    const { messages, updateMessages, newMessage } = useStore();
+    const { messagesByAngel } = useStore();
+    const messages = messagesByAngel[id] || []; // Pobieramy wiadomości dla konkretnego anioła
     const [isTyping, setIsTyping] = useState(false);
 
     useEffect(() => {
-        if (newMessage) {
+        const lastMessage = messages[messages.length - 1]; // Pobieramy ostatnią wiadomość
+    
+        if (lastMessage && !lastMessage.isUser) {
             setIsTyping(true);
+            setTimeout(() => setIsTyping(false), 2000);
         }
-    }, [newMessage]);
+    }, [messages]);
 
     const typingAnimation = useSpring({
         opacity: isTyping ? 1 : 0,

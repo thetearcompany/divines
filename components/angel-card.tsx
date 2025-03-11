@@ -66,7 +66,7 @@ export default function AngelCard({ angel }: AngelCard) {
 
 
     return <div
-        className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative select-none"
+        className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative"
     >
         {/* Header with Image */}
         {<div className="relative p-6 text-center">

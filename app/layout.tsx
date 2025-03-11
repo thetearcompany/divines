@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import CelestianLayout from '@/components/layouts/CelestianLayout';
 
 export const metadata: Metadata = {
   title: 'TEAR - Angelic Contact',
@@ -65,7 +66,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <CelestianLayout visitor={<>
+          list of people
+          </>}>
+          {children}
+        </CelestianLayout>
         <div className="divine-light z-[-1]" />
       </body>
     </html>

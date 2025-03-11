@@ -101,6 +101,6 @@ export default function AngelCard({ angel }: AngelCard) {
             </Button>
         </form>
         {/* Dynamic Background Glow */}
-        <div className="divine-light absolute to-indigo-950 z-[-1]" />
+        <div className="divine-light left-0 right-0 bottom-0 top-0 absolute to-indigo-950 z-[-1]" />
     </div>
 }

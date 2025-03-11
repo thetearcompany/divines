@@ -1,3 +1,4 @@
+import divines from '@/divines';
 import { AssistantResponse } from 'ai';
 import OpenAI from 'openai';
 
@@ -8,13 +9,16 @@ const openai = new OpenAI({
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
-export async function POST(req: Request) {
-  console.log(req);
+const getCelestian = (name: string) => divines.find(celestian => celestian.name == name)!;
+
+export async function POST(req: Request, { params }: { params: Promise<{ celestian: string }> }) {
   // Parse the request body
   const input: {
     threadId: string | null;
     message: string;
   } = await req.json();
+  const { celestian } = await params;
+  const assistant = getCelestian(celestian);
 
   // Create a thread if needed
   const threadId = input.threadId ?? (await openai.beta.threads.create({})).id;
@@ -30,11 +34,7 @@ export async function POST(req: Request) {
     async ({ forwardStream, sendDataMessage }) => {
       // Run the assistant on the thread
       const runStream = openai.beta.threads.runs.stream(threadId, {
-        assistant_id:
-          process.env.ASSISTANT_ID ??
-          (() => {
-            throw new Error('ASSISTANT_ID is not set');
-          })(),
+        assistant_id: assistant.openai_id,
       });
 
       // forward run status would stream message deltas

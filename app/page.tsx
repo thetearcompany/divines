@@ -5,7 +5,7 @@ import { useStore } from "@/hooks/use-store"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50/50 to-indigo-100/50">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-50/50 to-indigo-100/50 overflow-hidden">
       <AngelCarousel />
     </div>)
 }

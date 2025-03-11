@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import {FieldValues, useForm} from 'react-hook-form';
+import { FieldValues, useForm } from 'react-hook-form';
 import Image from "next/image";
 import { useAssistant, useChat } from '@ai-sdk/react';
 
@@ -10,22 +10,29 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import Conversation from "./conversation";
 
-import divines from "@/divines";
+import { angels } from "@/lib/data";
 
 interface AngelCard {
     angel: Partial<Angel> & {
         name: string;
+        symbol?: string;
+        divineRealm?: string;
+        celestialHierarchy?: string;
+        sacredGeometry?: string;
+        associatedColors?: string[];
+        associatedCrystals?: string[];
+        associatedHerbs?: string[];
     }
 }
 
-const assistantMap: Record<string, string> = divines.reduce((acc, angel) => {
-    acc[angel.name] = angel.name;
+const assistantMap: Record<string, string> = angels.reduce((acc, angel) => {
+    acc[angel.name] = angel.id || angel.name; // Upewnienie się, że ID asystenta jest poprawnie przypisane
     return acc;
 }, {} as Record<string, string>);
 
 export default function AngelCard({ angel }: AngelCard) {
 
-    const { register, handleSubmit, reset } = useForm({ });
+    const { register, handleSubmit, reset } = useForm({});
     const selectedAssistant = assistantMap[angel.name as string] || "default-assistant";
 
 
@@ -33,9 +40,9 @@ export default function AngelCard({ angel }: AngelCard) {
         api: `/api/assistant/${selectedAssistant}`
     });
 
-    const {messagesByAngel, updateMessages} = useStore();
+    const { messagesByAngel, updateMessages } = useStore();
     const messages = messagesByAngel[angel.name] ?? [];
- 
+
     const [hasStarted, setHasStarted] = useState(false);
 
     // submit message
@@ -43,7 +50,9 @@ export default function AngelCard({ angel }: AngelCard) {
         const text = data.message.trim();
 
         await updateMessages(angel.name!, { text, isUser: true, angelName: angel.name! });
-        await assistant.submitMessage(text);
+        assistant.submitMessage(text).then(() => {
+            console.log('message has been sent')
+        })
         setHasStarted(true);
         reset();
     }
@@ -71,10 +80,75 @@ export default function AngelCard({ angel }: AngelCard) {
                         className="object-cover w-full h-full"
                     />
                 </div>
-            <h3 className="text-2xl font-serif font-bold mt-4 text-indigo-400">{angel.name}</h3>
+                <h3 className="text-2xl font-serif font-bold mt-4 text-indigo-400">{angel.name}</h3>
+                {angel.symbol && (
+                    <p className="mt-2 text-lg font-semibold text-amber-300 italic">
+                        {angel.symbol}
+                    </p>
+                )}
+
                 <p className="mt-4 text-lg font-semibold text-amber-300 italic">
                     "{mantras[angel.name as keyof typeof mantras]}"
                 </p>
+
+                {(angel.divineRealm || angel.celestialHierarchy) && (
+                    <div className="px-6 py-4 bg-indigo-900/10 border-t border-indigo-500/30">
+                        {angel.divineRealm && (
+                            <p className="text-sm text-indigo-300">
+                                <strong>Divine Realm:</strong> {angel.divineRealm}
+                            </p>
+                        )}
+                        {angel.celestialHierarchy && (
+                            <p className="text-sm text-indigo-300">
+                                <strong>Celestial Hierarchy:</strong> {angel.celestialHierarchy}
+                            </p>
+                        )}
+                    </div>
+                )}
+
+                {angel.sacredGeometry && (
+                    <div className="px-6 py-4 bg-indigo-900/10 border-t border-indigo-500/30">
+                        <p className="text-sm text-indigo-300">
+                            <strong>Sacred Geometry:</strong> {angel.sacredGeometry}
+                        </p>
+                    </div>
+                )}
+
+                {angel.associatedColors && angel.associatedColors.length > 0 && (
+                    <div className="px-6 py-4 bg-indigo-900/10 border-t border-indigo-500/30">
+                        <h5 className="font-medium mb-2 text-sm text-indigo-400">Associated Colors</h5>
+                        <div className="flex gap-2">
+                            {angel.associatedColors.map((color, i) => (
+                                <div key={i} className="w-6 h-6 rounded-full border border-gray-300" style={{ backgroundColor: color }} />
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {(angel.associatedCrystals || angel.associatedHerbs) && (
+                    <div className="px-6 py-4 bg-indigo-900/10 border-t border-indigo-500/30 grid grid-cols-2 gap-4">
+                        {angel.associatedCrystals && angel.associatedCrystals.length > 0 && (
+                            <div className="bg-indigo-400/20 p-4 rounded-lg border border-indigo-500/30">
+                                <h5 className="font-medium mb-2 text-sm text-indigo-400">Crystals</h5>
+                                <ul className="text-xs text-amber-100 space-y-1">
+                                    {angel.associatedCrystals.map((crystal, i) => (
+                                        <li key={i}>{crystal}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                        {angel.associatedHerbs && angel.associatedHerbs.length > 0 && (
+                            <div className="bg-indigo-400/20 p-4 rounded-lg border border-indigo-500/30">
+                                <h5 className="font-medium mb-2 text-sm text-indigo-400">Herbs</h5>
+                                <ul className="text-xs text-amber-100 space-y-1">
+                                    {angel.associatedHerbs.map((herb, i) => (
+                                        <li key={i}>{herb}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
             <p className="text-sm opacity-80 mt-2 px-4">{angel.description}</p>
         </div>}

@@ -1,10 +1,6 @@
-"use client"
-
-import { useState, useEffect, useCallback } from "react"
+'use client'
 import { AngelCarousel } from "@/components/angel-carousel"
 import { angels } from "@/lib/data"
-import type { Angel } from "@/lib/types"
-import divines from "@/divines"
 import { useStore } from "@/hooks/use-store"
 
 export default function Home() {

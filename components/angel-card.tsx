@@ -2,20 +2,38 @@ import { Angel } from "@/lib/types";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import mantras from "@/mantras";
+import { useStore } from "@/hooks/use-store";
+import { Input } from "./ui/input";
+import { useCallback, useEffect } from "react";
+import {useForm} from 'react-hook-form';
 
 interface AngelCard {
     angel: Partial<Angel>
 }
 
 export default function AngelCard({ angel }: AngelCard) {
-    
+
+    const {message, messages, setMessage, updateMessages} = useStore();
+    const { register, handleSubmit, formState: { errors , isSubmitSuccessful} } = useForm();
+
+    const onSubmit = (query: string) => {
+        setMessage(query);
+    }
+
+    useEffect(() => {
+        if(isSubmitSuccessful) {
+            updateMessages(message);
+        }
+    }, [isSubmitSuccessful]);
+
+    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setMessage(e.target.value), [message]);
     return <div
         className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative"
     >
         {/* Header with Image */}
         <div className="relative p-6 text-center">
             <div className="relative p-6 text-center">
-                <div className="w-24 h-24 overflow-hidden rounded-full mx-auto border-4 border-indigo-300 shadow-md">
+                <div className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-300 shadow-md">
                     <Image
                         src={angel.image || "/placeholder.svg"}
                         alt={angel.name!}
@@ -70,8 +88,10 @@ export default function AngelCard({ angel }: AngelCard) {
         </div>
 
         {/* Sekcja wpisywania wiadomości */}
-        <div className="flex items-center p-6 border-t border-indigo-500/30">
-            <input
+        <form className="flex items-center p-6 border-t border-indigo-500/30" {...register} onSubmit={handleSubmit(onSubmit)}>
+            <Input
+                value={message}
+                onChange={handleInputChange}
                 type="text"
                 placeholder=""
                 className="flex-1 p-2 bg-indigo-400/30 text-amber-100 border border-indigo-500/30 rounded-lg focus:ring focus:ring-indigo-400"
@@ -79,8 +99,8 @@ export default function AngelCard({ angel }: AngelCard) {
             <Button size="sm" className="ml-3 bg-indigo-600 hover:bg-indigo-700">
                 Send
             </Button>
-        </div>
+        </form>
         {/* Dynamic Background Glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-indigo-950 opacity-30 z-[-1]" />
+        <div className="divine-light absolute to-indigo-950 z-[-1]" />
     </div>
 }

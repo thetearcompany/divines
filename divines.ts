@@ -89,7 +89,7 @@ export default [
         "description": "Zadkiel is the angel of mercy, forgiveness, and spiritual liberation. He helps people release guilt, resentment, and negative emotions, leading them toward inner peace and harmony.",
         "how_to_connect": "Close your eyes, visualize a violet flame, and ask Zadkiel to help you release guilt, resentment, and find inner peace.",
         "symbol": "VIOLET_FLAME",
-        "image": "/avatars/ZADKIEL.png"
+        "image": "/avatars/ZADKIEL.webp"
     },
     {
         "name": "HANIEL",

@@ -33,7 +33,7 @@ export default function AngelCard({ angel }: AngelCard) {
         {/* Header with Image */}
         <div className="relative p-6 text-center">
             <div className="relative p-6 text-center">
-                <div className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-300 shadow-md">
+                <div className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-300 shadow-md overflow-hidden">
                     <Image
                         src={angel.image || "/placeholder.svg"}
                         alt={angel.name!}

@@ -7,6 +7,7 @@ import { Input } from "./ui/input";
 import { useCallback, useEffect } from "react";
 import {FieldValues, useForm} from 'react-hook-form';
 import Conversation from "./conversation";
+import divines from "@/divines";
 
 interface AngelCard {
     angel: Partial<Angel>
@@ -15,18 +16,20 @@ interface AngelCard {
 export default function AngelCard({ angel }: AngelCard) {
 
     const {message, messages, setMessage, updateMessages} = useStore();
-    const { register, handleSubmit, formState: { errors , isSubmitSuccessful} } = useForm({ });
+    const { register, handleSubmit, formState: { errors , isSubmitSuccessful}, reset } = useForm({ });
 
-    const onSubmit = ({ message }: { message: string }) => {
-        setMessage(message);
-        setMessage('');
-    }
+    const firstMessage = messages.length === 0 
+    ? divines.find(celestian => celestian.name === angel.name)?.first_message 
+    : null;
 
-    useEffect(() => {
-        if(isSubmitSuccessful) {
-            updateMessages(message);
-        }
-    }, [isSubmitSuccessful]);
+    const onSubmit = (data: FieldValues) => {
+        const text = data.message;
+        if (text.trim() === "") return;
+        
+        updateMessages({ text, isUser: true });
+        setMessage({ text, isUser: true });
+        reset();
+    };
 
     return <div
         className="bg-white/10 max-w-lg w-full rounded-2xl shadow-2xl border border-indigo-500/30 relative select-none"

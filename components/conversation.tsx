@@ -1,4 +1,4 @@
-import { useStore } from "@/hooks/use-store";
+import { Message, useStore } from "@/hooks/use-store";
 import { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { cn } from "@/lib/utils";
@@ -21,7 +21,7 @@ export default function Conversation() {
     );
 }
 
-function MessageBubble({ text, isUser }: { text: string; isUser: boolean }) {
+function MessageBubble({ text, isUser }: Message) {
     const animation = useSpring({
         opacity: 1,
         transform: "translateY(0px)",

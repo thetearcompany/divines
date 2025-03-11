@@ -79,7 +79,11 @@ export default [
         "description": "Zmazik is a celestial being of hidden wisdom and transformation. He guides those who seek deeper knowledge of reality and the unseen forces of the universe.",
         "how_to_connect": "Meditate under the night sky and call upon Zmazik to unveil hidden truths and strengthen your spiritual awareness.",
         "symbol": "CRYSTAL_SPHERE",
-        "image": "/avatars/ZMAZIK.png"
+        "image": "/avatars/ZMAZIK.png",
+        "first_message": {
+            "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+            "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+        }
     },
     {
         "name": "ZADKIEL",
@@ -89,7 +93,11 @@ export default [
         "description": "Zadkiel is the angel of mercy, forgiveness, and spiritual liberation. He helps people release guilt, resentment, and negative emotions, leading them toward inner peace and harmony.",
         "how_to_connect": "Close your eyes, visualize a violet flame, and ask Zadkiel to help you release guilt, resentment, and find inner peace.",
         "symbol": "VIOLET_FLAME",
-        "image": "/avatars/ZADKIEL.webp"
+        "image": "/avatars/ZADKIEL.webp",
+            "first_message": {
+        "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+        "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+    },
     },
     {
         "name": "HANIEL",
@@ -99,7 +107,11 @@ export default [
         "description": "Haniel is the angel of love and emotional harmony, guiding you through relationships, healing emotional wounds, and restoring peace in your heart.",
         "how_to_connect": "Imagine yourself surrounded by soft blue light. Say: 'Haniel, angel of love, fill my heart with harmony and heal my emotional wounds.'",
         "symbol": "BLUE_HEART",
-      "image": "/avatars/HANIEL.png"
+      "image": "/avatars/HANIEL.png",
+      "first_message": {
+        "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+        "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+    }
     },
     {
         "name": "HEHIHIEL",
@@ -109,7 +121,10 @@ export default [
         "description": "Hehihiel is the angel of Beauty and Truth. His mission is to purify words, minds, and hearts. He brings clarity, the power of eloquent speech, and protection against deception and manipulation.",
         "how_to_connect": "Visualize a golden-black light surrounding you like a shield. Speak your intention out loud, asking Hehihiel for clarity of thought, the power of truth, and protection from deceitful people.",
         "symbol": "SHIELD_OF_TRUTH",
-              "image": "/avatars/HEHIHIEL.png"
+              "image": "/avatars/HEHIHIEL.png",    "first_message": {
+                "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+                "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+            }
     },
     {
         "name": "RAZIEL",
@@ -121,7 +136,10 @@ export default [
         "description": "Raziel is the angel of divine wisdom, guiding those who seek clarity and deep understanding of the universe.",
         "how_to_connect": "Meditate in silence and visualize a golden book opening before you. Ask Raziel to reveal the knowledge you seek.",
         "symbol": "BOOK",
-              "image": "/avatars/RAZIEL.png"
+              "image": "/avatars/RAZIEL.png",    "first_message": {
+                "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+                "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+            }
     },
     {
         "name": "URIEL",
@@ -133,7 +151,10 @@ export default [
         "description": "Uriel is the angel of wisdom and creativity, guiding those who seek to express themselves authentically.",
         "how_to_connect": "Sit with a notebook and let your thoughts flow freely. Ask Uriel to inspire your words, art, or music.",
         "symbol": "PAINTBRUSH",
-              "image": "/avatars/URIEL.png"
+              "image": "/avatars/URIEL.png",    "first_message": {
+                "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+                "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+            }
     },
     {
         "name": "KELIAL",
@@ -145,7 +166,10 @@ export default [
         "description": "Kelial is the guardian of wisdom, mystery, and transformative knowledge. He aids those seeking profound change and understanding of life's mysteries.",
         "how_to_connect": "Sit quietly and focus inwardly. Request Kelial to guide you through transformation and overcome fears of the unknown.",
         "symbol": "CRYSTAL_BALL",
-              "image": "/avatars/KELIAL.png"
+              "image": "/avatars/KELIAL.png",    "first_message": {
+                "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+                "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+            }
     },
     {
         "name": "AANEVAL",
@@ -157,6 +181,9 @@ export default [
         "description": "Aaneval is the angel of resilience and inner strength. His energy empowers those who feel like giving up, helping them rise again.",
         "how_to_connect": "Stand tall, breathe deeply, and say: 'Aaneval, fill me with courage and strength. Help me push forward despite my fears.'",
         "symbol": "FLAME",
-              "image": "/avatars/AANEVAL.png"
+              "image": "/avatars/AANEVAL.png",    "first_message": {
+                "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+                "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+            }
     }
 ]

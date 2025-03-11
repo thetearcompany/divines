@@ -8,11 +8,11 @@ interface CelestianProps {
 
 export default function Celestian({ id }: CelestianProps) {
     const { messagesByAngel } = useStore();
-    const messages = messagesByAngel[id] || []; // Pobieramy wiadomości dla konkretnego anioła
+    const messages = messagesByAngel[id] || [];
     const [isTyping, setIsTyping] = useState(false);
 
     useEffect(() => {
-        const lastMessage = messages[messages.length - 1]; // Pobieramy ostatnią wiadomość
+        const lastMessage = messages[messages.length - 1];
     
         if (lastMessage && !lastMessage.isUser) {
             setIsTyping(true);

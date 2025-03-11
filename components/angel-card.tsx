@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {FieldValues, useForm} from 'react-hook-form';
 import Image from "next/image";
 import { useAssistant, useChat } from '@ai-sdk/react';
@@ -19,7 +19,7 @@ interface AngelCard {
 }
 
 const assistantMap: Record<string, string> = divines.reduce((acc, angel) => {
-    acc[angel.name] = angel.openai_id;
+    acc[angel.name] = angel.name;
     return acc;
 }, {} as Record<string, string>);
 
@@ -38,30 +38,22 @@ export default function AngelCard({ angel }: AngelCard) {
  
     const [hasStarted, setHasStarted] = useState(false);
 
+    // submit message
+    const onSubmit = async (data: FieldValues) => {
+        const text = data.message.trim();
+
+        await updateMessages(angel.name!, { text, isUser: true, angelName: angel.name! });
+        await assistant.submitMessage(text);
+        setHasStarted(true);
+        reset();
+    }
+
+    // if conversation has started
     useEffect(() => {
         if (messages.some(msg => msg.isUser)) {
             setHasStarted(true);
         }
     }, [messages]);
-
-    useEffect(() => {
-        const lastMessage = assistant.messages[assistant.messages - 1] || 0;
-        updateMessages(selectedAssistant, lastMessage)
-    }, [assistant.messages]);
-
-    const firstMessage = !hasStarted
-        ? divines.find(celestian => celestian.name === angel.name)?.first_message ?? null
-        : null;
-
-        const onSubmit = async (data: FieldValues) => {
-            const text = data.message;
-            if (text.trim() === "") return;
-        
-            await updateMessages(angel.name!, { text, isUser: true, angelName: angel.name! });
-            await assistant.submitMessage(text);
-            setHasStarted(true);
-            reset();
-        };
 
 
     return <div

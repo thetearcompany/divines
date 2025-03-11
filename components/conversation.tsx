@@ -1,6 +1,6 @@
 'use client'
 
-import { Message, useStore } from "@/hooks/use-store";
+import { Message } from "@/hooks/use-store";
 import { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { cn } from "@/lib/utils";
@@ -28,21 +28,21 @@ export default function Conversation({ messages }: ConversationProps) {
 
 function MessageBubble({ text, isUser }: Message) {
     const animation = useSpring({
-        opacity: 1,
-        transform: "translateY(0px)",
-        from: { opacity: 0, transform: "translateY(10px)" },
-        config: { tension: 200, friction: 20 },
+        // from: { opacity: 0, transform: "translateY(10px)" },
+        // to: { opacity: 1, transform: "translateY(0)" },
+        // config: { tension: 200, friction: 20 },
     });
 
     return (
-        <animated.div
-            style={animation}
-            className={`my-2 px-4 py-2 max-w-xs text-sm shadow-md ${cn(
-                isUser && "bg-indigo-500 text-white self-end ml-auto",
-                !isUser && "bg-indigo-800/40 text-amber-100 self-start"
-            )}`}
-        >
-            {text}
-        </animated.div>
+<animated.div
+    key={text} // 👈 Zapewnia, że każda wiadomość ma unikalny klucz, wymuszając animację
+    style={animation}
+    className={`my-2 px-4 py-2 max-w-xs text-sm shadow-md ${cn(
+        isUser && "bg-indigo-500 text-white self-end ml-auto",
+        !isUser && "bg-indigo-800/40 text-amber-100 self-start"
+    )}`}
+>
+    {text}
+</animated.div>
     );
 }

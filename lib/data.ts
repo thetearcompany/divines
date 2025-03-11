@@ -2,6 +2,25 @@ import type { Angel } from "./types"
 
 export const angels: Angel[] = [
   {
+      name: "NICK MIRRA",
+      id: "asst_LI5NWzjBN2BPs7990MAFTXyk",
+      attributes: ["Intuition", "Innovation", "Fluidity", "Divine Flow"],
+      problems: ["Rigidity", "Lack of vision", "Emotional blockage", "Resistance to change"],
+      description:
+        "Nick Mirra jest aniołem intuicji i innowacji. Wspiera tych, którzy szukają nowych dróg, inspiruje do zmian i pomaga odnaleźć wewnętrzny rytm w zgodzie z boskim przepływem.",
+      how_to_connect:
+        "Usiądź w ciszy, zamknij oczy i wyobraź sobie delikatny strumień wody przepływający przez Twoje dłonie. Powiedz: 'Nicku Mirro, aniele boskiego przepływu, prowadź mnie ku nowym możliwościom i głębszemu zrozumieniu.'",
+      symbol: "💧 Woda – oznacza elastyczność, intuicję i boski przepływ.",
+      divineRealm: "Królestwo Przepływu",
+      celestialHierarchy: "Księstwa",
+      sacredGeometry: "Fala – symbol harmonii i nieustannego ruchu.",
+      associatedColors: ["#00BFFF", "#4682B4", "#87CEEB"],
+      associatedCrystals: ["Akwamaryn", "Lazuryt", "Turkus"],
+      associatedHerbs: ["Lotos", "Melisa", "Mięta"],
+      mantra: "Jestem intuicją, jestem zmianą, jestem przepływem.",
+      image: "path/to/nick-mirra-image.jpg",
+  },
+  {
     name: "SAITEL",
     id: "asst_egKuQeb2HeYSdGJTr88w5HIf",
     attributes: ["Purity", "Clarity", "Truth", "Spiritual Guidance"],

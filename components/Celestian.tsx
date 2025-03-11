@@ -33,9 +33,9 @@ export default function Celestian({ id }: CelestianProps) {
             ))}
 
             {isTyping && (
-                <animated.p style={typingAnimation} className="text-sm italic text-gray-400 mt-2">
-                    Celestian pisze...
-                </animated.p>
+                <animated.pre style={typingAnimation} className="text-sm italic text-gray-400 mt-2">
+                    <span>Celestian pisze...</span>
+                </animated.pre>
             )}
         </div>
     );

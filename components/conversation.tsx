@@ -34,7 +34,7 @@ function MessageBubble({ text, isUser }: Message) {
     });
 
     return (
-<animated.div
+<animated.pre
     key={text} // 👈 Zapewnia, że każda wiadomość ma unikalny klucz, wymuszając animację
     style={animation}
     className={`my-2 px-4 py-2 max-w-xs text-sm shadow-md ${cn(
@@ -42,7 +42,7 @@ function MessageBubble({ text, isUser }: Message) {
         !isUser && "bg-indigo-800/40 text-amber-100 self-start"
     )}`}
 >
-    {text}
-</animated.div>
+    <>{text}</>
+</animated.pre>
     );
 }

@@ -75,7 +75,7 @@ export const useStore = create<Store>((set) => ({
 
     messages: [], // initialize messages as an empty array
     messagesByAngel: divines.reduce((acc, angel) => {
-        acc[angel.name] = [];
+        acc[angel.name] = [{ text: angel.first_message!.text, isUser: false }];
         return acc;
     }, {} as Record<string, Message[]>),
     updateMessages(angelName: string, message: Message) {

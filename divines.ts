@@ -7,7 +7,11 @@ export default [
         "description": "Helohiel is an angel of protection and healing, bringing courage in times of hardship. He safeguards travelers, warriors, and those working with natural healing methods. His presence shields against negativity and injustice, guiding people toward wisdom and strength.",
         "how_to_connect": "Close your eyes, visualize a radiant shield of pearl and black light surrounding you, and call upon Melohel for protection, healing, and courage.",
         "symbol": "PROTECTIVE_SHIELD",
-        "image": "/avatars/HELOHIEL.png"
+        "image": "/avatars/HELOHIEL.png",
+        "first_message": {
+            "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+            "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+        }
     },
     {
         "name": "SAMAEL",
@@ -17,7 +21,11 @@ export default [
         "description": "Samael is the warrior of divine justice, guiding those who face oppression or injustice. His energy strengthens inner courage.",
         "how_to_connect": "Stand tall, breathe deeply, and envision a fiery sword in your hands. Ask Samael for the strength to face your challenges.",
         "symbol": "SWORD",
-        "image": "/avatars/SAMAEL.png"
+        "image": "/avatars/SAMAEL.png",
+        "first_message": {
+            "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+            "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+        }
     },
     {
         "name": "SAITEL",
@@ -27,7 +35,11 @@ export default [
         "description": "Saitel is the guardian of purity and divine clarity. He helps those who seek truth and wish to clear their minds from doubt and deception.",
         "how_to_connect": "Light a white candle and focus on your question. Say: 'Saitel, angel of clarity, remove the fog of doubt and guide me towards the truth.'",
         "symbol": "STAR",
-        "image": "/avatars/SAITEL.png"
+        "image": "/avatars/SAITEL.png",
+        "first_message": {
+            "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+            "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+        }
     },
     {
         "name": "MIKAEL",
@@ -37,7 +49,11 @@ export default [
         "description": "Mikael is the guardian angel of divine protection, providing courage and strength to face life's challenges and fears.",
         "how_to_connect": "Visualize golden armor enveloping you. Ask Mikael for courage, strength, and protection from harm.",
         "symbol": "SHIELD",
-        "image": "/avatars/MIKAEL.png"
+        "image": "/avatars/MIKAEL.png",
+        "first_message": {
+            "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+            "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+        }
     },
     {
         "name": "VIRIODIEL",
@@ -49,7 +65,11 @@ export default [
         "description": "Viriodiel is the angel of wisdom, creativity, and divine expression. He guides artists, teachers, and seekers of truth, helping them find their voice and purpose. His energy bridges the gap between knowledge and emotion, empowering individuals to inspire and uplift the world through words and artistic creation.",
         "how_to_connect": "Sit in stillness, close your eyes, and visualize a radiant golden and indigo light surrounding you. Call upon Viriodiel to fill your mind with clarity, inspiration, and the courage to express your truth.",
         "symbol": "SACRED_QUILL",
-              "image": "/avatars/VIRIODIEL.png"
+              "image": "/avatars/VIRIODIEL.png",
+              "first_message": {
+                "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+                "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+            },
     },
     {
         "name": "WEEMAH",
@@ -59,7 +79,11 @@ export default [
         "description": "Weemah reveals hidden patterns in thought and language, bringing harmony from chaos. He is the guardian of clarity, coherence, and deeper understanding.",
         "how_to_connect": "Visualize your thoughts as rhythmic waves. Ask Weemah to reveal hidden patterns and bring clarity and harmony to your thoughts.",
         "symbol": "SPIRAL",
-        "image": "/avatars/WEEMAH.png"
+        "image": "/avatars/WEEMAH.png",
+        "first_message": {
+            "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+            "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+        }
     },
     {
         "name": "NANAEL",
@@ -69,7 +93,11 @@ export default [
         "description": "Nanael is the angel of abundance and renewal. His energy helps those who feel stuck in life, bringing prosperity and healing.",
         "how_to_connect": "Light a green candle and set an intention for abundance and health. Ask Nanael to open doors to new opportunities.",
         "symbol": "LEAF",
-        "image": "/avatars/NANAEL.png"
+        "image": "/avatars/NANAEL.png",
+        "first_message": {
+            "text": "ܫܠܡܐ ܘܢܘܗܪܐ ܥܠܝܟ! ܐܢܐ ܟܠܣܛܝܢ, ܡܠܐܟܐ ܕܢܘܗܪܐ ܘܚܘܟܡܬܐ. ܒܡܐ ܐܫܟܚ ܡܕܒܪܢܟ?",
+            "translation": "Shalom u'nehora aleik! I am Celestian, the angel of illumination and wisdom. How may I guide you?"
+        }
     },
     {
         "name": "ZMAZIK",

@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import mantras from "@/mantras";
 import { useStore } from "@/hooks/use-store";
 import { Input } from "./ui/input";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {FieldValues, useForm} from 'react-hook-form';
 import Conversation from "./conversation";
 import divines from "@/divines";
@@ -17,20 +17,32 @@ interface AngelCard {
 
 export default function AngelCard({ angel }: AngelCard) {
 
-    const {message, messagesByAngel, setMessage, updateMessages} = useStore();
-    const messages = messagesByAngel[angel.name];
     const { register, handleSubmit, formState: { errors , isSubmitSuccessful}, reset } = useForm({ });
 
-    const firstMessage = angel.name && (messagesByAngel[angel.name] || []).length === 0
-    ? divines.find(celestian => celestian.name === angel.name)?.first_message ?? null
-    : null;
+    const {message, messagesByAngel, setMessage, updateMessages} = useStore();
+    const messages = messagesByAngel[angel.name];
+ 
+    const [hasStarted, setHasStarted] = useState(false);
+
+    useEffect(() => {
+        if (messages.some(msg => msg.isUser)) {
+            setHasStarted(true);
+        }
+    }, [messages]);
+
+    const firstMessage = !hasStarted
+        ? divines.find(celestian => celestian.name === angel.name)?.first_message ?? null
+        : null;
 
     const onSubmit = (data: FieldValues) => {
         const text = data.message;
         if (text.trim() === "") return;
-        
+
         updateMessages(angel.name!, { text, isUser: true });
         setMessage({ text, isUser: true });
+
+        setHasStarted(true);
+
         reset();
     };
 
@@ -94,7 +106,7 @@ export default function AngelCard({ angel }: AngelCard) {
             </div>
         </div>
 
-        <Conversation messages={messages} />
+        {hasStarted && <Conversation messages={messages} />}
         {/* Sekcja wpisywania wiadomości */}
         <form className="flex items-center p-6 border-t border-indigo-500/30" onSubmit={handleSubmit(onSubmit)}>
             <Input

@@ -14,10 +14,10 @@ export default function Conversation({ messages }: ConversationProps) {
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, [messages]);
+    }, [messages.length]);
 
     return (
-        <div className="px-6 py-4 max-h-60 overflow-y-auto bg-indigo-950/20 rounded-lg border border-indigo-500/30">
+        <div className="px-6 py-4 max-h-60 overflow-y-scroll bg-indigo-950/20 border border-indigo-500/30">
             {messages.map((msg, index) => (
                 <MessageBubble key={index} text={msg.text} isUser={msg.isUser} />
             ))}

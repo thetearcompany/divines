@@ -65,7 +65,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <div className="divine-light opacity-30 z-[-1]" />
+      </body>
     </html>
   )
 }

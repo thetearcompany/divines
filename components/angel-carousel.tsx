@@ -36,7 +36,7 @@ export function AngelCarousel(props: AngelCarouselProps) {
         <div className="absolute inset-y-0 right-0 md:w-[27px] bg-gradient-to-l from-background to-transparent z-20 pointer-events-none opacity/40" />
         <div className="opacity-70 absolute inset-y-0 right-0 w-48 backdrop-blur-sm bg-gradient-to-l from-indigo-900/40 to-transparent z-10 pointer-events-none opacity/40" />
 
-        <div className="layout-background-bottom absolute opacity-10" />
+        <div className="layout-background-bottom absolute opacity-30 z-[-1]" />
 
         <CarouselContent>
           {divines.map((guide, index) => {
@@ -55,7 +55,6 @@ export function AngelCarousel(props: AngelCarouselProps) {
           })}
         </CarouselContent>
       </Carousel>
-      <div className="divine-light absolute top-0 right-0 left-0 bottom-0 z-[-1]" />
     </div>
   )
 }

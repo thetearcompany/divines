@@ -1,6 +1,7 @@
 export interface Angel {
   name: string
   id: string
+  image: string;
   attributes: string[]
   problems: string[]
   description: string

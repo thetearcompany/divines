@@ -9,6 +9,7 @@ import type { Angel, ChatHistoryItem, UserProfile, CelestialEvent } from "@/lib/
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+
 export default function Home() {
   const [selectedAngel, setSelectedAngel] = useState<Angel | null>(null)
   const [chatHistory, setChatHistory] = useState<ChatHistoryItem[]>([])

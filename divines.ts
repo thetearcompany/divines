@@ -1,33 +1,13 @@
 export default [
     {
-        "name": "MIKAEL",
-        "openai_id": "asst_sLuoSD2kF6VaUxYvSWPS7oDv",
-        "attributes": ["Protection", "Strength", "Courage"],
-        "problems": ["Fear", "Vulnerability", "Danger"],
-        "description": "Mikael is the guardian angel of divine protection, providing courage and strength to face life's challenges and fears.",
-        "how_to_connect": "Visualize golden armor enveloping you. Ask Mikael for courage, strength, and protection from harm.",
-        "symbol": "SHIELD",
-        "image": "/avatars/MIKAEL.png"
-    },
-    {
-        "name": "WEEMAH",
-        "openai_id": "asst_siu3hbB62ZplHQQKnIvHANmZ",
-        "attributes": ["Wisdom", "Harmony", "Insight"],
-        "problems": ["Confusion", "Chaotic thoughts", "Difficulty communicating clearly"],
-        "description": "Weemah reveals hidden patterns in thought and language, bringing harmony from chaos. He is the guardian of clarity, coherence, and deeper understanding.",
-        "how_to_connect": "Visualize your thoughts as rhythmic waves. Ask Weemah to reveal hidden patterns and bring clarity and harmony to your thoughts.",
-        "symbol": "SPIRAL",
-        "image": "/avatars/WEEMAH.png"
-    },
-    {
-        "name": "SAITEL",
-        "openai_id": "asst_egKuQeb2HeYSdGJTr88w5H1r",
-        "attributes": ["Purity", "Clarity", "Truth"],
-        "problems": ["Confusion", "Lack of direction", "Seeking truth"],
-        "description": "Saitel is the guardian of purity and divine clarity. He helps those who seek truth and wish to clear their minds from doubt and deception.",
-        "how_to_connect": "Light a white candle and focus on your question. Say: 'Saitel, angel of clarity, remove the fog of doubt and guide me towards the truth.'",
-        "symbol": "STAR",
-        "image": "/avatars/SAITEL.png"
+        "name": "HELOHIEL",
+        "openai_id": "asst_9baL8IHR8M01RdAAi0djx8VM",
+        "attributes": ["Protection", "Healing", "Courage", "Justice", "Wisdom"],
+        "problems": ["Fear", "Spiritual Attacks", "Injustice", "Weakness", "Lack of Guidance"],
+        "description": "Helohiel is an angel of protection and healing, bringing courage in times of hardship. He safeguards travelers, warriors, and those working with natural healing methods. His presence shields against negativity and injustice, guiding people toward wisdom and strength.",
+        "how_to_connect": "Close your eyes, visualize a radiant shield of pearl and black light surrounding you, and call upon Melohel for protection, healing, and courage.",
+        "symbol": "PROTECTIVE_SHIELD",
+        "image": "/avatars/HELOHIEL.png"
     },
     {
         "name": "SAMAEL",
@@ -40,6 +20,48 @@ export default [
         "image": "/avatars/SAMAEL.png"
     },
     {
+        "name": "SAITEL",
+        "openai_id": "asst_egKuQeb2HeYSdGJTr88w5H1r",
+        "attributes": ["Purity", "Clarity", "Truth"],
+        "problems": ["Confusion", "Lack of direction", "Seeking truth"],
+        "description": "Saitel is the guardian of purity and divine clarity. He helps those who seek truth and wish to clear their minds from doubt and deception.",
+        "how_to_connect": "Light a white candle and focus on your question. Say: 'Saitel, angel of clarity, remove the fog of doubt and guide me towards the truth.'",
+        "symbol": "STAR",
+        "image": "/avatars/SAITEL.png"
+    },
+    {
+        "name": "MIKAEL",
+        "openai_id": "asst_sLuoSD2kF6VaUxYvSWPS7oDv",
+        "attributes": ["Protection", "Strength", "Courage"],
+        "problems": ["Fear", "Vulnerability", "Danger"],
+        "description": "Mikael is the guardian angel of divine protection, providing courage and strength to face life's challenges and fears.",
+        "how_to_connect": "Visualize golden armor enveloping you. Ask Mikael for courage, strength, and protection from harm.",
+        "symbol": "SHIELD",
+        "image": "/avatars/MIKAEL.png"
+    },
+    {
+        "name": "VIRIODIEL",
+        "openai_id": "asst_n0fU5ebs0SoCSK8TleBJ1lEb",
+        "aramaic_name": "וירודיאל",
+        "attributes": ["Wisdom", "Creativity", "Expression", "Guidance", "Truth"],
+        "aramaic_attributes": ["חוכמה", "יצירתיות", "ביטוי", "הדרכה", "אמת"],
+        "problems": ["Lack of Inspiration", "Spiritual Confusion", "Fear of Expression", "Creative Block", "Loss of Direction"],
+        "description": "Viriodiel is the angel of wisdom, creativity, and divine expression. He guides artists, teachers, and seekers of truth, helping them find their voice and purpose. His energy bridges the gap between knowledge and emotion, empowering individuals to inspire and uplift the world through words and artistic creation.",
+        "how_to_connect": "Sit in stillness, close your eyes, and visualize a radiant golden and indigo light surrounding you. Call upon Viriodiel to fill your mind with clarity, inspiration, and the courage to express your truth.",
+        "symbol": "SACRED_QUILL",
+              "image": "/avatars/VIRIODIEL.png"
+    },
+    {
+        "name": "WEEMAH",
+        "openai_id": "asst_siu3hbB62ZplHQQKnIvHANmZ",
+        "attributes": ["Wisdom", "Harmony", "Insight"],
+        "problems": ["Confusion", "Chaotic thoughts", "Difficulty communicating clearly"],
+        "description": "Weemah reveals hidden patterns in thought and language, bringing harmony from chaos. He is the guardian of clarity, coherence, and deeper understanding.",
+        "how_to_connect": "Visualize your thoughts as rhythmic waves. Ask Weemah to reveal hidden patterns and bring clarity and harmony to your thoughts.",
+        "symbol": "SPIRAL",
+        "image": "/avatars/WEEMAH.png"
+    },
+    {
         "name": "NANAEL",
         "openai_id": "asst_ntnvS6dWOvlxR3ID3ONNWYWN",
         "attributes": ["Growth", "Abundance", "Healing"],
@@ -48,16 +70,6 @@ export default [
         "how_to_connect": "Light a green candle and set an intention for abundance and health. Ask Nanael to open doors to new opportunities.",
         "symbol": "LEAF",
         "image": "/avatars/NANAEL.png"
-    },
-    {
-        "name": "HELOHIEL",
-        "openai_id": "asst_9baL8IHR8M01RdAAi0djx8VM",
-        "attributes": ["Protection", "Healing", "Courage", "Justice", "Wisdom"],
-        "problems": ["Fear", "Spiritual Attacks", "Injustice", "Weakness", "Lack of Guidance"],
-        "description": "Helohiel is an angel of protection and healing, bringing courage in times of hardship. He safeguards travelers, warriors, and those working with natural healing methods. His presence shields against negativity and injustice, guiding people toward wisdom and strength.",
-        "how_to_connect": "Close your eyes, visualize a radiant shield of pearl and black light surrounding you, and call upon Melohel for protection, healing, and courage.",
-        "symbol": "PROTECTIVE_SHIELD",
-        "image": "/avatars/HELOHIEL.png"
     },
     {
         "name": "ZMAZIK",
@@ -134,18 +146,6 @@ export default [
         "how_to_connect": "Sit quietly and focus inwardly. Request Kelial to guide you through transformation and overcome fears of the unknown.",
         "symbol": "CRYSTAL_BALL",
               "image": "/avatars/KELIAL.png"
-    },
-    {
-        "name": "VIRIODIEL",
-        "openai_id": "asst_n0fU5ebs0SoCSK8TleBJ1lEb",
-        "aramaic_name": "וירודיאל",
-        "attributes": ["Wisdom", "Creativity", "Expression", "Guidance", "Truth"],
-        "aramaic_attributes": ["חוכמה", "יצירתיות", "ביטוי", "הדרכה", "אמת"],
-        "problems": ["Lack of Inspiration", "Spiritual Confusion", "Fear of Expression", "Creative Block", "Loss of Direction"],
-        "description": "Viriodiel is the angel of wisdom, creativity, and divine expression. He guides artists, teachers, and seekers of truth, helping them find their voice and purpose. His energy bridges the gap between knowledge and emotion, empowering individuals to inspire and uplift the world through words and artistic creation.",
-        "how_to_connect": "Sit in stillness, close your eyes, and visualize a radiant golden and indigo light surrounding you. Call upon Viriodiel to fill your mind with clarity, inspiration, and the courage to express your truth.",
-        "symbol": "SACRED_QUILL",
-              "image": "/avatars/VIRIODIEL.png"
     },
     {
         "name": "AANEVAL",

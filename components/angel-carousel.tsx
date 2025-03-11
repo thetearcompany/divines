@@ -1,24 +1,19 @@
-import { Card, CardContent } from "@/components/ui/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Angel } from "@/lib/types"
-import { Canvas } from "@react-three/fiber";
-import Particles from "@/components/particles";
 
 interface AngelCarouselProps {
   angels: Angel[]
   onSelectAngel: (angel: Angel) => void;
+  current: Angel | null;
+  message: string;
 }
 
 import divines from '@/divines'
-import Image from "next/image"
 import useEmblaCarousel from 'embla-carousel-react'
-import { Button } from "./ui/button"
 import { useRef } from "react"
 import AngelCard from "./angel-card";
 

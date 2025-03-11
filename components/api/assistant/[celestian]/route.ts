@@ -34,9 +34,10 @@ export async function POST(req: Request, { params }: { params: Promise<{ celesti
     async ({ forwardStream, sendDataMessage }) => {
       // Run the assistant on the thread
       const runStream = openai.beta.threads.runs.stream(threadId, {
-        assistant_id: assistant.openai_id,
+        assistant_id: assistant.openai_id!,
       });
 
+      await sendDataMessage({ data: { message } });
       // forward run status would stream message deltas
       let runResult = await forwardStream(runStream);
 

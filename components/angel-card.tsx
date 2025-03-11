@@ -19,8 +19,8 @@ export default function AngelCard({ angel }: AngelCard) {
 
     const { register, handleSubmit, formState: { errors , isSubmitSuccessful}, reset } = useForm({ });
 
-    const {message, messagesByAngel, setMessage, updateMessages} = useStore();
-    const messages = messagesByAngel[angel.name];
+    const {messagesByAngel, updateMessages} = useStore();
+    const messages = messagesByAngel[angel.name] ?? [];
  
     const [hasStarted, setHasStarted] = useState(false);
 

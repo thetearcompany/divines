@@ -8,3 +8,5 @@ const openai = createOpenAI({
     "X-Sacred-Purpose": "Celestian Wisdom"
   }
 });
+
+export default openai;

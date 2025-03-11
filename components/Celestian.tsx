@@ -1,41 +1,20 @@
 import { useEffect, useState } from "react";
 import { useStore } from "@/hooks/use-store";
 import { useSpring, animated } from "@react-spring/web";
-import { openai } from "@/lib/openai"; // Import OpenAI API
 
-export default function Celestian() {
+interface CelestianProps {
+    id: string;
+}
+
+export default function Celestian({ id }: CelestianProps) {
     const { messages, updateMessages, newMessage } = useStore();
     const [isTyping, setIsTyping] = useState(false);
 
     useEffect(() => {
         if (newMessage) {
             setIsTyping(true);
-            fetchCelestianResponse(newMessage.text);
         }
     }, [newMessage]);
-
-    const fetchCelestianResponse = async (userMessage: string) => {
-        try {
-            const response = await openai.createChatCompletion({
-                model: "gpt-4",
-                messages: [
-                    { role: "system", content: "Jesteś Celestianem, aniołem światła i mądrości. Odpowiadaj duchowo i inspirująco." },
-                    ...messages.map(msg => ({ role: msg.isUser ? "user" : "assistant", content: msg.text })),
-                    { role: "user", content: userMessage },
-                ],
-                temperature: 0.7,
-                max_tokens: 100,
-            });
-
-            const botMessage = response.data.choices[0]?.message?.content || "Nie rozumiem, spróbuj inaczej.";
-            updateMessages({ text: botMessage, isUser: false });
-        } catch (error) {
-            console.error("Błąd OpenAI:", error);
-            updateMessages({ text: "Przepraszam, nie mogę teraz odpowiedzieć.", isUser: false });
-        } finally {
-            setIsTyping(false);
-        }
-    };
 
     const typingAnimation = useSpring({
         opacity: isTyping ? 1 : 0,

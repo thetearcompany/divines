@@ -10,23 +10,26 @@ import Conversation from "./conversation";
 import divines from "@/divines";
 
 interface AngelCard {
-    angel: Partial<Angel>
+    angel: Partial<Angel> & {
+        name: string;
+    }
 }
 
 export default function AngelCard({ angel }: AngelCard) {
 
-    const {message, messages, setMessage, updateMessages} = useStore();
+    const {message, messagesByAngel, setMessage, updateMessages} = useStore();
+    const messages = messagesByAngel[angel.name];
     const { register, handleSubmit, formState: { errors , isSubmitSuccessful}, reset } = useForm({ });
 
-    const firstMessage = messages.length === 0 
-    ? divines.find(celestian => celestian.name === angel.name)?.first_message 
+    const firstMessage = angel.name && (messagesByAngel[angel.name] || []).length === 0
+    ? divines.find(celestian => celestian.name === angel.name)?.first_message ?? null
     : null;
 
     const onSubmit = (data: FieldValues) => {
         const text = data.message;
         if (text.trim() === "") return;
         
-        updateMessages({ text, isUser: true });
+        updateMessages(angel.name!, { text, isUser: true });
         setMessage({ text, isUser: true });
         reset();
     };
@@ -91,7 +94,7 @@ export default function AngelCard({ angel }: AngelCard) {
             </div>
         </div>
 
-        <Conversation />
+        <Conversation messages={messages} />
         {/* Sekcja wpisywania wiadomości */}
         <form className="flex items-center p-6 border-t border-indigo-500/30" onSubmit={handleSubmit(onSubmit)}>
             <Input

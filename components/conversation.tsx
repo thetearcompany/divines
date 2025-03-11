@@ -5,8 +5,11 @@ import { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";
 import { cn } from "@/lib/utils";
 
-export default function Conversation() {
-    const { messages } = useStore();
+interface ConversationProps {
+    messages: Message[]
+}
+
+export default function Conversation({ messages }: ConversationProps) {
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

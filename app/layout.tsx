@@ -11,27 +11,26 @@ export const metadata: Metadata = {
     'gematria', 'kabbalah', 'biblical numerology', 'archaeography',
     'mysticism', 'guardian angels', 'divine guidance', 'sefirot', 'tree of life'
   ],
-  authors: [{ name: 'DIVINES', url: 'https://divines.life' }],
+  authors: [{ name: 'The Tear Company', url: 'https://szloza.pl' }],
   referrer: 'origin',
   themeColor: '#ffffff', // Głęboka czerń symbolizująca tajemnicę i transcendencję
   colorScheme: 'light',
-  viewport: { width: 'device-width', initialScale: 1 },
   creator: 'DIVINES',
   publisher: 'DIVINES',
   robots: 'index, follow',
-  alternates: { canonical: 'https://thetear.net' },
+  alternates: { canonical: 'https://teardrop.in' },
   icons: {
-    icon: 'https://thetear.net/icon.png',
-    apple: 'https://thetear.net/apple-icon.png'
+    // icon: 'https://teardrop.in/icon.png',
+    // apple: 'https://teardrop.in/apple-icon.png'
   },
-  manifest: 'https://thetear.net/manifest.json',
+  manifest: 'https://teardrop.in/manifest.json',
   openGraph: {
     type: 'website',
-    url: 'https://thetear.net',
+    url: 'https://teardrop.in',
     title: 'TEAR - Angelic Contact',
     description: 'Unlock divine messages through sacred numerology, symbols, and angelic presence.',
     siteName: 'TEAR - The Angelic Gateway',
-    images: [{ url: 'https://thetear.net/og-image.png' }],
+    images: [{ url: 'https://teardrop.in/og-image.png' }],
   },
   // twitter: {
   //   card: 'summary_large_image',
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
   //   images: 'https://thetear.net/twitter-image.jpg',
   // },
   // facebook: { appId: '987654321' },
-  verification: { google: 'xyz789', yandex: 'qwe123' },
+  // verification: { google: 'xyz789', yandex: 'qwe123' },
   appleWebApp: { capable: true, title: 'TEAR', statusBarStyle: 'black-translucent' },
   formatDetection: { telephone: false },
   // itunes: { app: { id: '987654321', affiliateData: 'angelic-aff', appArguments: 'divine-path' } },
@@ -51,9 +50,9 @@ export const metadata: Metadata = {
     // ios: { appStoreId: '987654321', url: 'https://thetear.net' },
     // android: { packageName: 'com.teargateway', url: 'https://thetear.net' },
   },
-  archives: ['https://thetear.net/archives'],
-  assets: ['https://thetear.net/assets'],
-  bookmarks: ['https://thetear.net/bookmarks'],
+  // archives: ['https://thetear.net/archives'],
+  // assets: ['https://thetear.net/assets'],
+  // bookmarks: ['https://thetear.net/bookmarks'],
   category: 'mysticism & divine communication',
   classification: 'angelic interaction & kabbalistic insights',
 };
@@ -67,7 +66,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
-        <div className="divine-light opacity-30 z-[-1]" />
+        <div className="divine-light z-[-1]" />
       </body>
     </html>
   )

@@ -1,3 +1,5 @@
+'use client'
+
 import { Message, useStore } from "@/hooks/use-store";
 import { useEffect, useRef } from "react";
 import { useSpring, animated } from "@react-spring/web";

@@ -9,6 +9,7 @@ export interface Message {
 
 interface Store {
     message?: Message;
+    newMessage?: Message;
     setMessage: (message: Message) => void;
 
     messages: Message[];

@@ -18,7 +18,6 @@ export const angels: Angel[] = [
       associatedCrystals: ["Akwamaryn", "Lazuryt", "Turkus"],
       associatedHerbs: ["Lotos", "Melisa", "Mięta"],
       mantra: "Jestem intuicją, jestem zmianą, jestem przepływem.",
-      image: "path/to/nick-mirra-image.jpg",
   },
   {
     name: "SAITEL",
@@ -37,7 +36,6 @@ export const angels: Angel[] = [
     associatedCrystals: ["Clear Quartz", "Amethyst", "Selenite"],
     associatedHerbs: ["Szałwia", "Lawenda", "Biała róża"],
     mantra: "Jestem czysty, jestem jasny, jestem prawdą.",
-    image: "path/to/saitel-image.jpg",
   },
   {
     name: "SAMAEL",
@@ -56,7 +54,6 @@ export const angels: Angel[] = [
     associatedCrystals: ["Granat", "Rubin", "Tygrysie oko"],
     associatedHerbs: ["Dąb", "Pokrzywa", "Cynamon"],
     mantra: "Jestem odważny, jestem sprawiedliwy, jestem silny.",
-    image: "path/to/samael-image.jpg",
   },
   {
     name: "NANAEL",
@@ -75,7 +72,6 @@ export const angels: Angel[] = [
     associatedCrystals: ["Szmaragd", "Awenturyn", "Malachit"],
     associatedHerbs: ["Mięta", "Rumianek", "Bazylia"],
     mantra: "Jestem obfitością, jestem zdrowiem, jestem wzrostem.",
-    image: "path/to/nanael-image.jpg",
   },
   {
     name: "ZADKIEL",
@@ -94,6 +90,5 @@ export const angels: Angel[] = [
     associatedCrystals: ["Ametyst", "Lepidolit", "Sugilit"],
     associatedHerbs: ["Mirra", "Lawenda", "Waleriana"],
     mantra: "Jestem przebaczeniem, jestem wolnością, jestem pokojem.",
-    image: "path/to/zadkiel-image.jpg",
   }
 ]

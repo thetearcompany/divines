@@ -1,21 +1,11 @@
-export type Angel = {
-  name: string
-  id: string
-  image: string;
-  attributes: string[]
-  problems: string[]
-  description: string
-  how_to_connect: string
-  symbol: string
-  divineRealm: string
-  celestialHierarchy: string
-  sacredGeometry: string
-  associatedColors: string[]
-  associatedCrystals: string[]
-  associatedHerbs: string[]
-  mantra: string;
-} & {
+export interface Angel {
+  id: string;
   name: string;
+  image?: string;
+  attributes?: string[];
+  problems?: string[];
+  description?: string;
+  how_to_connect?: string;
   symbol?: string;
   divineRealm?: string;
   celestialHierarchy?: string;
@@ -23,6 +13,7 @@ export type Angel = {
   associatedColors?: string[];
   associatedCrystals?: string[];
   associatedHerbs?: string[];
+  mantra?: string;
 }
 
 export interface ChatHistoryItem {

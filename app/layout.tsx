@@ -67,6 +67,8 @@ export default function RootLayout({
       <body>
         {children}
         <div className="divine-light z-[-1]" />
+        <div className="layout-background z-[-2]" />
+        <div className="layout-background-bottom z-[-3]" />
       </body>
     </html>
   )

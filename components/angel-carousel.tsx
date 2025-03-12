@@ -5,10 +5,13 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 
-import divines from '@/divines'
+import {angels} from '@/lib/data'
+
 import useEmblaCarousel from 'embla-carousel-react'
 import { useRef } from "react"
 import AngelCard from "./angel-card";
+
+import Autoplay from 'embla-carousel-autoplay'
 
 export function AngelCarousel() {
 
@@ -18,7 +21,7 @@ export function AngelCarousel() {
   return (
     <div className="relative">
       <Carousel
-      plugins={[]}
+      plugins={[Autoplay({ delay: 11720})]}
       opts={{ loop: true, align: "center" }}
       setApi={() => emblaApi}
       ref={emblaRef}
@@ -29,11 +32,11 @@ export function AngelCarousel() {
         {/* <div className="opacity-70 absolute inset-y-0 right-0 w-48 backdrop-blur-sm bg-gradient-to-l from-indigo-900/40 to-transparent z-10 pointer-events-none opacity/40" /> */}
 
         <CarouselContent>
-          {divines.map((guide, index) => {
+          {angels.map((guide, index) => {
             return (
               <CarouselItem
-                key={guide.openai_id}
-                className="cursor-pointer pl-4 md:basis-1/3 h-full"
+                key={guide.id}
+                className="cursor-pointer pl-4 md:basis-1/2 h-full"
               >
                 <div
                   className="inset-0 backdrop-blur-2xl flex items-center justify-center p-6"

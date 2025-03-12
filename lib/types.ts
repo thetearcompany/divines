@@ -1,4 +1,4 @@
-export interface Angel {
+export type Angel = {
   name: string
   id: string
   image: string;
@@ -13,7 +13,16 @@ export interface Angel {
   associatedColors: string[]
   associatedCrystals: string[]
   associatedHerbs: string[]
-  mantra: string
+  mantra: string;
+} & {
+  name: string;
+  symbol?: string;
+  divineRealm?: string;
+  celestialHierarchy?: string;
+  sacredGeometry?: string;
+  associatedColors?: string[];
+  associatedCrystals?: string[];
+  associatedHerbs?: string[];
 }
 
 export interface ChatHistoryItem {

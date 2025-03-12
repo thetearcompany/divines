@@ -50,6 +50,7 @@
     "cmdk": "1.0.4",
     "date-fns": "latest",
     "dexie": "^4.0.11",
+    "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-react": "latest",
     "expo": "latest",
     "expo-asset": "latest",

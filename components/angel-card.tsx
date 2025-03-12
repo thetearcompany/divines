@@ -35,6 +35,8 @@ export default function AngelCard({ angel }: AngelCard) {
     const { register, handleSubmit, reset } = useForm({});
     const selectedAssistant = assistantMap[angel.name as string] || "default-assistant";
 
+    const X = Math.floor(Math.random() * Math.PI * 74)
+
 
     const assistant = useAssistant({
         api: `/api/assistant/${selectedAssistant}`
@@ -70,6 +72,7 @@ export default function AngelCard({ angel }: AngelCard) {
     >
         {/* Header with Image */}
         {<div className="relative p-6 text-center">
+        <h1 className="text-4xl text-white">{X}</h1>
             <div className="relative p-6 text-center">
                 <div className="w-24 h-24 rounded-full mx-auto border-4 border-indigo-300 shadow-md overflow-hidden">
                     <Image
@@ -117,7 +120,7 @@ export default function AngelCard({ angel }: AngelCard) {
                 {angel.associatedColors && angel.associatedColors.length > 0 && (
                     <div className="px-6 py-4 bg-indigo-900/10 border-t border-indigo-500/30">
                         <h5 className="font-medium mb-2 text-sm text-indigo-400">Associated Colors</h5>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 items-center justify-center">
                             {angel.associatedColors.map((color, i) => (
                                 <div key={i} className="w-6 h-6 rounded-full border border-gray-300" style={{ backgroundColor: color }} />
                             ))}

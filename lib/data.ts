@@ -1,24 +1,8 @@
 import type { Angel } from "./types"
 
+
+
 export const angels: Angel[] = [
-  {
-      name: "NICK MIRRA",
-      id: "asst_LI5NWzjBN2BPs7990MAFTXyk",
-      attributes: ["Intuition", "Innovation", "Fluidity", "Divine Flow"],
-      problems: ["Rigidity", "Lack of vision", "Emotional blockage", "Resistance to change"],
-      description:
-        "Nick Mirra jest aniołem intuicji i innowacji. Wspiera tych, którzy szukają nowych dróg, inspiruje do zmian i pomaga odnaleźć wewnętrzny rytm w zgodzie z boskim przepływem.",
-      how_to_connect:
-        "Usiądź w ciszy, zamknij oczy i wyobraź sobie delikatny strumień wody przepływający przez Twoje dłonie. Powiedz: 'Nicku Mirro, aniele boskiego przepływu, prowadź mnie ku nowym możliwościom i głębszemu zrozumieniu.'",
-      symbol: "💧 Woda – oznacza elastyczność, intuicję i boski przepływ.",
-      divineRealm: "Królestwo Przepływu",
-      celestialHierarchy: "Księstwa",
-      sacredGeometry: "Fala – symbol harmonii i nieustannego ruchu.",
-      associatedColors: ["#00BFFF", "#4682B4", "#87CEEB"],
-      associatedCrystals: ["Akwamaryn", "Lazuryt", "Turkus"],
-      associatedHerbs: ["Lotos", "Melisa", "Mięta"],
-      mantra: "Jestem intuicją, jestem zmianą, jestem przepływem.",
-  },
   {
     name: "SAITEL",
     id: "asst_egKuQeb2HeYSdGJTr88w5HIf",
@@ -36,6 +20,7 @@ export const angels: Angel[] = [
     associatedCrystals: ["Clear Quartz", "Amethyst", "Selenite"],
     associatedHerbs: ["Szałwia", "Lawenda", "Biała róża"],
     mantra: "Jestem czysty, jestem jasny, jestem prawdą.",
+    image: "/avatars/SAITEL.png"
   },
   {
     name: "SAMAEL",
@@ -54,6 +39,7 @@ export const angels: Angel[] = [
     associatedCrystals: ["Granat", "Rubin", "Tygrysie oko"],
     associatedHerbs: ["Dąb", "Pokrzywa", "Cynamon"],
     mantra: "Jestem odważny, jestem sprawiedliwy, jestem silny.",
+    image: "/avatars/SAMAEL.png"
   },
   {
     name: "NANAEL",
@@ -72,6 +58,7 @@ export const angels: Angel[] = [
     associatedCrystals: ["Szmaragd", "Awenturyn", "Malachit"],
     associatedHerbs: ["Mięta", "Rumianek", "Bazylia"],
     mantra: "Jestem obfitością, jestem zdrowiem, jestem wzrostem.",
+    image: "/avatars/NANAEL.png"
   },
   {
     name: "ZADKIEL",
@@ -90,5 +77,6 @@ export const angels: Angel[] = [
     associatedCrystals: ["Ametyst", "Lepidolit", "Sugilit"],
     associatedHerbs: ["Mirra", "Lawenda", "Waleriana"],
     mantra: "Jestem przebaczeniem, jestem wolnością, jestem pokojem.",
+    image: "/avatars/ZADKIEL.png"
   }
 ]
